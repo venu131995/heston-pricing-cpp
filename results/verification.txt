@@ -1,0 +1,29 @@
+Lewis(BS cf) vs BS call K=70                               PASS  got 31.03864744  ref 31.03864744  |diff| 1.78e-13  tol 1.0e-10
+Lewis(BS cf) vs BS call K=100                              PASS  got 10.30002221  ref 10.30002221  |diff| 1.28e-13  tol 1.0e-10
+Lewis(BS cf) vs BS call K=140                              PASS  got 1.30309424  ref 1.30309424  |diff| 2.66e-13  tol 1.0e-10
+BS delta vs FD                                             PASS  got 0.63209443  ref 0.63209443  |diff| 4.90e-11  tol 1.0e-08
+BS gamma vs FD                                             PASS  got 0.01236477  ref 0.01236479  |diff| 1.74e-08  tol 1.0e-05
+BS vega vs FD                                              PASS  got 37.09430735  ref 37.09429722  |diff| 1.01e-05  tol 1.0e-04
+implied vol round trip                                     PASS  got 0.37000000  ref 0.37000000  |diff| 1.67e-16  tol 1.0e-10
+put-call parity                                            PASS  got 5.88610941  ref 5.88610941  |diff| 7.11e-15  tol 1.0e-12
+    PDE error 200 / 400 / 800 nodes: 3.87e-03 / 9.51e-04 / 2.42e-04 (ratios 4.1, 3.9)
+BS down-in put: observed PDE order (400 -> 800)            PASS  got 1.97269456  ref 2.00000000  |diff| 2.73e-02  tol 2.0e-01
+BS down-in put: Richardson(400, 800) vs closed form        PASS  got 5.06271744  ref 5.06271138  |diff| 6.06e-06  tol 2.0e-05
+BS vanilla put: Richardson(400, 800) vs closed form        PASS  got 9.31491019  ref 9.31490616  |diff| 4.03e-06  tol 2.0e-05
+BS down-in put K<H equals vanilla when S<=H                PASS  got 1.70336364  ref 1.70336364  |diff| 0.00e+00  tol 1.0e-12
+Heston put K=80: ADI (200x100x200) vs Lewis                PASS  got 1.73460550  ref 1.73501696  |diff| 4.11e-04  tol 5.0e-03
+Heston put K=80: QE MC (4e5 paths) vs Lewis, tol 3 s.e.    PASS  got 1.74191188  ref 1.73501696  |diff| 6.89e-03  tol 2.8e-02
+Heston put K=100: ADI (200x100x200) vs Lewis               PASS  got 6.54079763  ref 6.54100061  |diff| 2.03e-04  tol 5.0e-03
+Heston put K=100: QE MC (4e5 paths) vs Lewis, tol 3 s.e.   PASS  got 6.56026404  ref 6.54100061  |diff| 1.93e-02  tol 4.8e-02
+    Feller condition (2 kappa theta >= sigma^2): violated
+Heston down-in put: QE MC + bridge vs ADI parity           PASS  got 4.09154378  ref 4.09611384  |diff| 4.57e-03  tol 5.6e-02
+    discrete monitoring only (200 dates): 3.9378 vs continuous 4.0915
+Heston(sigma->0) DIP MC vs BS closed form, tol 3 s.e.      PASS  got 5.06102485  ref 5.06271138  |diff| 1.69e-03  tol 5.1e-02
+calibration: rmse (vol)                                    PASS  got 0.00000000  ref 0.00000000  |diff| 1.78e-14  tol 1.0e-06
+calibration: v0                                            PASS  got 0.04000000  ref 0.04000000  |diff| 8.33e-17  tol 1.0e-04
+calibration: kappa                                         PASS  got 1.50000000  ref 1.50000000  |diff| 9.97e-13  tol 2.0e-02
+calibration: theta                                         PASS  got 0.04000000  ref 0.04000000  |diff| 4.86e-16  tol 1.0e-03
+calibration: sigma                                         PASS  got 0.50000000  ref 0.50000000  |diff| 4.04e-13  tol 1.0e-02
+calibration: rho                                           PASS  got -0.70000000  ref -0.70000000  |diff| 2.69e-13  tol 1.0e-03
+
+ALL PASSED (0 failures)

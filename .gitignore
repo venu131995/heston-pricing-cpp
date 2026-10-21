@@ -1,0 +1,5 @@
+build/
+__pycache__/
+*.pyc
+results_run.log
+data/
